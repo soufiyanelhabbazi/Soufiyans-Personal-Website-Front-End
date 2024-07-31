@@ -1,0 +1,163 @@
+<section class="flex flex-col mt-8 space-y-6 px-4 md:px-20">
+  <div class="w-full object-cover relative z-0">
+    <img
+      src="assets/img/openai-wallpaper.png"
+      alt="A slider image"
+      class="rounded-2xl w-full max-h-[775px] object-cover"
+      loading="lazy"
+    />
+    <div class="absolute inset-0 z-10 flex justify-center items-center rounded-2xl text-white bg-zinc-950/15 dark:bg-zinc-950/25">
+      <div class="w-full sm:w-3/4 flex flex-col justify-center items-center text-center  px-4 space-y-4 sm:space-y-16">
+        <h1 class="font-bold text-xl sm:text-4xl lg:text-5xl leading-snug">
+          Crafting the future, one line of code at a time.
+        </h1>
+        <p class="leading-normal sm:leading-relaxed font-light text-base sm:text-lg">
+          <span class="font-semibold">Soufiyan EL HABBAZI</span>, Software Engineer with a focus on full-stack development and AI integration.<br/>
+          I specialize in creating dynamic, scalable web solutions and seamlessly integrating artificial intelligence to enhance user experiences. Connect with me through my social media profiles below to collaborate, share ideas, or simply stay in touch.
+        </p>
+        <div class="flex space-x-6 pt-8">
+          <a *ngFor="let s of socials" class="duration-100 ease-in-out hover:opacity-75 hover:scale-90" href="{{s.url}}" target="_blank">
+            <ng-icon name="{{s.icon}}" size="28"></ng-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="w-full flex flex-col justify-between gap-8 mt-12 px-4 py-4 lg:flex-row lg:px-20">
+  <div class="w-full flex flex-col lg:w-3/5 space-y-6">
+    <ng-container *ngIf="(posts) as postsList; else loading">
+      <div class="flex flex-col p-4 sm:py-6 sm:px-8 space-y-3 rounded-2xl bg-zinc-200/25 dark:bg-zinc-800/15" *ngFor="let p of postsList">
+        <div class="flex justify-between items-center text-zinc-400 dark:text-zinc-600 font-medium text-md">
+          <div class="flex space-x-4 items-center">
+            <div class="w-0.5 h-5 bg-zinc-400 dark:bg-zinc-600 rounded-full"></div>
+            <p class="date">{{p.createdAt | date}}.</p>
+          </div>
+        </div>
+        <h5 class="font-semibold text-lg">{{p.title}}</h5>
+        <p class="text-zinc-600 dark:text-zinc-400">
+          {{p.description}}
+        </p>
+        <a [routerLink]="'/blog/posts/'+p._id" class="flex items-center underline underline-offset-4 text-zinc-900 dark:text-zinc-100 gap-x-2">
+          Read article
+        </a>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="w-full flex flex-col lg:w-2/5 gap-y-8 items-center lg:items-end">
+    <div class="w-full flex flex-col p-4 sm:py-6 sm:px-8 space-y-6 rounded-2xl bg-zinc-200/25 dark:bg-zinc-800/15 border border-zinc-300/40 dark:border-zinc-700/40">
+      <div class="flex items-center">
+        <div class="flex space-x-2.5 items-center text-zinc-500">
+          <ng-icon name="heroEnvelope" size="24"></ng-icon>
+          <p class="text-zinc-900 dark:text-zinc-50 font-semibold text-md sm:text-lg">Stay up to date (coming soon)</p>
+        </div>
+      </div>
+      <p class="text-zinc-600 dark:text-zinc-400">
+        Get notified when I publish something new, and unsubscribe at any
+        time.
+      </p>
+      <div class="flex text-white space-x-4 mt-4">
+        <input
+          type="text"
+          placeholder="Email address"
+          title="Please fill out this field"
+          class="flex-1 text-zinc-900 dark:text-zinc-50 bg-zinc-50 dark:bg-zinc-900 px-4 py-2 rounded-md border border-zinc-300/40 dark:border-zinc-700/40"
+          required
+        />
+        <button class="px-4 py-2 text-zinc-900 dark:text-zinc-100 bg-zinc-300/40 dark:bg-zinc-700/40 rounded-md">Join</button>
+      </div>
+    </div>
+
+    <div class="w-full flex flex-col p-4 sm:py-6 sm:px-8 space-y-6 rounded-2xl bg-zinc-200/25 dark:bg-zinc-800/15 border border-zinc-300/40 dark:border-zinc-700/40">
+      <div class="flex items-center">
+        <div class="flex space-x-2.5 items-center text-zinc-500">
+          <ng-icon name="heroBriefcase" size="24"></ng-icon>
+          <p class="text-zinc-900 dark:text-zinc-50 font-semibold text-md sm:text-lg">Work</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-y-4">
+        <div class="flex gap-x-2">
+          <a class="p-1 size-14 border border-zinc-300/40 dark:border-zinc-700/40 bg-zinc-50 dark:bg-zinc-800 rounded-lg">
+            <img
+              ngSrc="assets/img/rifak.jpg"
+              alt="Rifak"
+              class="rounded-md saturate-50 hover:saturate-100"
+              width="679" height="679"/>
+          </a>
+          <div class="flex flex-col justify-center flex-1">
+            <h5 class="font-normal text-md sm:text-lg">Rifak</h5>
+            <p class="text-zinc-400 text-sm sm:text-md">Full stack Java developer</p>
+          </div>
+          <div class="flex text-end items-end text-zinc-600 text-sm font-medium">
+            <p>Jul 2023 - Mar 2024</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-y-4">
+        <div class="flex gap-x-2">
+          <a class="p-1 size-14 border border-zinc-300/40 dark:border-zinc-700/40 bg-zinc-50 dark:bg-zinc-800 rounded-lg">
+            <img
+              ngSrc="assets/img/3d-logo.jpg"
+              alt="3D Smart Factory"
+              class="rounded-md saturate-50 hover:saturate-100"
+              width="600" height="600"/>
+          </a>
+          <div class="flex flex-col justify-center flex-1">
+            <h5 class="font-normal text-md sm:text-lg">3D Smart Factory</h5>
+            <p class="text-zinc-400 text-sm sm:text-md">Backend & AI Engineer Intern</p>
+          </div>
+          <div class="flex text-end items-end text-zinc-600 text-sm font-medium">
+            <p>Feb - Jul 2023</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-y-4">
+        <div class="flex gap-x-2">
+          <a class="p-1 size-14 border border-zinc-300/40 dark:border-zinc-700/40 bg-zinc-50 dark:bg-zinc-800 rounded-lg">
+            <img
+              ngSrc="assets/img/tgr-logo.png"
+              alt="Trésorerie Générale du Royaume"
+              class="bg-white rounded-md saturate-50 hover:saturate-100"
+              width="130" height="130"/>
+          </a>
+          <div class="flex flex-col justify-center flex-1">
+            <h5 class="font-normal text-md sm:text-lg">TGR - Casablanca</h5>
+            <p class="text-zinc-400 text-sm sm:text-md">Backend & AI Engineer Intern</p>
+          </div>
+          <div class="flex text-end items-end text-zinc-600 text-sm font-medium">
+            <p>Jun - Aug 2022</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-y-4">
+        <div class="flex gap-x-2">
+          <a class="p-1 size-14 border border-zinc-300/40 dark:border-zinc-700/40 bg-zinc-50 dark:bg-zinc-800 rounded-lg">
+            <img
+              ngSrc="assets/img/panorasys.jpeg"
+              alt="Panorasys"
+              class="rounded-md saturate-50 hover:saturate-100"
+              width="200" height="200"
+            />
+          </a>
+          <div class="flex flex-col justify-center flex-1">
+            <h5 class="font-normal text-md sm:text-lg">Panorasys Paris</h5>
+            <p class="text-zinc-400 text-sm sm:text-md">Entry-Level Internship</p>
+          </div>
+          <div class="flex text-end items-end text-zinc-600 text-sm font-medium">
+            <p>Jun - Jul 2021</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<ng-template #loading>
+  <ng-container *ngFor="let i of [1,2,3]">
+    <HomePostSkeleton />
+  </ng-container>
+</ng-template>

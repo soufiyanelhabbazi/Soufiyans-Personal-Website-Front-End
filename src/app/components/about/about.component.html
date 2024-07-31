@@ -1,0 +1,100 @@
+<section class="flex flex-col justify-between gap-10 mt-16 px-4 py-4 lg:flex-row sm:px-20">
+  <div class="flex flex-col space-y-4 w-full lg:w-1/2">
+    <div class="flex flex-col font-bold text-3xl sm:text-4xl leading-snug">
+      <h1 class="flex">Hello <img ngSrc="assets/img/hello.png" alt="👋🏻" width="40" height="40" class="inline-block mx-2 rotate-6" /></h1>
+      
+      <h1>I'm Soufiyan El Habbazi.</h1>
+    </div>
+    <p class="leading-relaxed text-md text-zinc-600 dark:text-zinc-400 text-justify">
+      I hail from the historical city of
+      <a class="underline" href="https://fr.wikipedia.org/wiki/Mekn%C3%A8s" target="_blank">Meknes</a>,
+      Morocco—a place I proudly call home. My journey into the tech world has been both unconventional and fascinating,
+      fueled by a deep-seated passion for mathematics and problem-solving that I discovered during my
+      preparatory classes post-baccalaureate.
+      <br />
+      <br />
+      I am a graduate of ENSET Mohammedia, where I specialized as a software engineer with a focus on Software,
+      Big Data, and Cloud Computing Engineering. Throughout my academic and professional journey,
+      my interests have gravitated towards software development and Artificial Intelligence,
+      areas where innovation and creativity meet to change the world as we know it.
+      <br />
+      <br />
+      Off the screen, my life orbits around football, which I both relish watching and playing,
+      and chess—a game that has lately captured my fascination for its strategic depth.
+      My friends and family are my bedrock, providing me with joy and grounding in equal measure.
+      I hold values such as empathy, lean mode, and the pursuit of efficiency close to my heart,
+      believing that they are crucial in both personal growth and professional excellence.
+      <br />
+      <br />
+      Here's a fun fact about me: my developer journey has taken me from the simple acts of
+      <a class="underline" href="https://github.com/THEXONE17/nodejs" target="_blank">"pushing zip files to GitHub"</a>
+      to mastering the art of training AI models and developing sophisticated software solutions.
+      This evolution reflects not only the rapid pace of technological advancement but also my commitment to learning, adapting,
+      and thriving in the dynamic world of technology.
+      <br />
+      <br />
+      My path to becoming a software engineer was far from linear, yet every step—from my early fascination with mathematics
+      to the rigorous training in Big Data and Cloud Computing—has been instrumental in shaping my approach to technology and innovation.
+      Today, I leverage my skills, curiosity, and the lessons learned along the way to explore the vast possibilities of software development
+      and AI, driven by the belief that technology, when thoughtfully applied, can forge a better future for us all.
+      <br />
+      <br />
+      Whether you're a fellow tech enthusiast, a curious learner, or simply here to share in my journey, I welcome you to my blog.
+      Here, I aim to share insights, experiences, and reflections on the ever-evolving landscape of technology, hoping to inspire,
+      educate, and connect with like-minded souls across the globe.
+      <br />
+      <br />
+      Remember, in the realm of technology and beyond, the only constant is change, and with a bit of passion, persistence,
+      and a willingness to learn, there's no limit to what we can achieve together. Welcome to my world!
+    </p>
+  </div>
+
+  <div class="flex flex-col w-full items-center lg:w-1/2">
+    <div class="w-2/3">
+      <img  *ngIf="isDarkMode; else lightLogo"
+        ngSrc="assets/img/logo-white.svg" alt="Phœnix"
+        class="logo-animation rounded-2xl"
+        height="400" width="300"/>
+      <ng-template #lightLogo>
+        <img ngSrc="assets/img/logo-black.svg" alt="Phœnix"
+             class="logo-animation rounded-2xl"
+             height="400" width="300"/>
+      </ng-template>
+    </div>
+    <div class="flex flex-col w-2/3 self-center space-y-4 mt-10">
+
+      <div class="flex space-x-4 items-center text-zinc-600 dark:text-zinc-400" *ngFor="let social of socials">
+        <span class="size-6 duration-100 ease-in-out hover:opacity-75">
+          <ng-icon name="{{social.icon}}" size="20"></ng-icon>
+        </span>
+        <a
+          class="text-sm font-bold"
+          href="{{social.url}}"
+          target="_blank"
+        >{{social.content}}</a
+        >
+      </div>
+
+      <div class="flex space-x-4 items-center  text-zinc-600 dark:text-zinc-400">
+        <span class="size-6 duration-100 ease-in-out brightness-75 dark:brightness-100 hover:opacity-75">
+          <img ngSrc="assets/img/chess.com.png" alt="C" width=16 height=24 class="ml-0.5 saturate-0" >
+        </span>
+        <a class="text-sm font-bold"
+          href="https://www.chess.com/member/x17md"
+          target="_blank">
+          Follow on Chess.com</a>
+      </div>
+
+      <div class="py-4">
+        <hr class="border-zinc-300/40 dark:border-zinc-700/40"/>
+      </div>
+
+      <div class="flex space-x-4 items-center text-zinc-600 dark:text-zinc-400">
+         <span class="size-6 duration-100 ease-in-out hover:opacity-75">
+          <ng-icon name="heroEnvelopeSolid" size="22"></ng-icon>
+        </span>
+        <a class="text-sm font-bold" href="mailto:elhabbazisoufiyan.pro@gmail.com">elhabbazisoufiyan.pro@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+<nav class="pt-4 px-4 md:px-20">
+  <div class="flex items-center justify-between sm:justify-around">
+
+    <div class="size-11">
+      <a routerLink="/home">
+        <img *ngIf="isDarkMode; else lightLogo" ngSrc="assets/img/logo-white.svg" alt="Phœnix" width="65" height="80"/>
+        <ng-template #lightLogo>
+          <img ngSrc="assets/img/logo-black.svg" alt="Phœnix" width="65" height="80"/>
+        </ng-template>
+      </a>
+    </div>
+
+    <div class="hidden sm:flex mt-2">
+      <ul class="flex justify-center items-center px-3 font-medium text-sm rounded-full">
+        <li class="mx-1" *ngFor="let link of links">
+          <a routerLink="{{link.route}}" class="border border-transparent hover:border-zinc-300/40 dark:hover:border-zinc-700/40 hover:bg-zinc-100 dark:hover:bg-zinc-800/25 rounded-full px-3 py-2.5" routerLinkActive="bg-zinc-100 dark:bg-zinc-800/25 border-zinc-300/40 dark:border-zinc-700/40">{{link.name}}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="flex space-x-4 mt-2">
+      <button class="flex py-2 px-3 justify-center items-center bg-zinc-50 dark:bg-zinc-800/25 rounded-full border border-zinc-200 dark:border-zinc-700/40" (click)="toggleDarkMode()">
+        <ng-icon *ngIf="isDarkMode; else lightIcon" name="heroSunSolid" size=20 class="text-zinc-400 hover:text-zinc-200"></ng-icon>
+        <ng-template #lightIcon>
+          <ng-icon name="heroMoonSolid" size=20 class="text-zinc-700 hover:text-zinc-800"></ng-icon>
+        </ng-template>
+      </button>
+      <div class="block sm:hidden">
+        <button (click)="toggleMobileMenu()"  class="flex py-2 px-3 justify-center items-center bg-zinc-50 dark:bg-zinc-800/25 rounded-full border border-zinc-200 dark:border-zinc-700/40 focus:outline-none">
+          <ng-icon *ngIf="!isMobileMenuOpen" name="heroSquares2x2Solid" size=20 class="text-zinc-700 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200"></ng-icon>
+          <ng-icon *ngIf="isMobileMenuOpen" name="heroXMarkSolid" size=20 class="text-zinc-700 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200"></ng-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="isMobileMenuOpen" class="sm:hidden flex flex-col items-center w-full mt-8 space-y-4 font-medium">
+    <ul class="flex flex-col items-center w-full space-y-2 bg-zinc-100 dark:bg-zinc-900 rounded-lg border border-zinc-300/40 dark:border-zinc-700/40 p-4">
+      <li class="w-full" *ngFor="let link of links">
+        <a routerLink="{{link.route}}" class="block w-full text-center py-2 rounded-lg bg-zinc-200/40 dark:bg-zinc-700/25 hover:bg-zinc-200/25 dark:hover:bg-zinc-700/15 hover:text-zinc-900 dark:hover:text-white" routerLinkActive="!bg-zinc-200/25 dark:!bg-zinc-700/15 border border-zinc-300/40 dark:border-zinc-700/40">{{link.name}}</a>
+      </li>
+      <li class="w-full">
+        <a target="_blank" class="block w-full text-center py-2 rounded-lg bg-zinc-200/40 dark:bg-zinc-700/25 hover:bg-zinc-200/50 dark:hover:bg-zinc-700/15 hover:text-zinc-900 dark:hover:text-white" href="#">Resume</a>
+      </li>
+    </ul>
+  </div>
+</nav>
