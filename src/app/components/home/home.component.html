@@ -1,22 +1,18 @@
 <!-- HERO SECTION -->
 <section class="flex flex-col mt-8 space-y-6 px-4 md:px-20 mb-8">
-  <!--
-    The parent uses .bg-cover and .bg-center
-    to place your hero image as a background.
-  -->
   <div
     class="relative w-full rounded-2xl bg-cover bg-center overflow-hidden"
     style="background-image: url('assets/img/openai-wallpaper.png');"
   >
-    <!--
-      We set min-h on small screens so it won't be too tiny,
-      and a fixed height (775px) at md+ to mimic your old layout's height.
+    <!-- 
+      On small screens, use min-h to avoid squashing. 
+      On medium+ screens, fix height to 775px (your original desktop height).
     -->
     <div class="min-h-[400px] sm:min-h-[500px] md:h-[775px]">
-      <!-- Overlay shade for better text contrast -->
+      <!-- Overlay shade for text contrast -->
       <div class="absolute inset-0 bg-zinc-950/15 dark:bg-zinc-950/25 rounded-2xl"></div>
 
-      <!-- Hero Text Container -->
+      <!-- Hero text container -->
       <div
         class="relative z-10 flex flex-col items-center justify-center text-center text-white h-full
                px-4 sm:px-8 py-8 sm:py-12 lg:py-16 space-y-4 sm:space-y-8"
@@ -24,12 +20,14 @@
         <h1 class="font-bold text-xl sm:text-4xl lg:text-5xl leading-snug">
           Crafting the future, one line of code at a time.
         </h1>
+
         <p class="leading-normal sm:leading-relaxed font-light text-base sm:text-lg max-w-[40rem]">
           <span class="font-semibold">Soufiyan EL HABBAZI</span>, Software Engineer with a focus on full-stack development and AI integration.
-          I specialize in creating dynamic, scalable web solutions and seamlessly integrating artificial intelligence to enhance user experiences.
+          I specialize in creating dynamic, scalable web and mobile solutions and seamlessly integrating artificial intelligence to enhance user experiences.
           Connect with me through my social media profiles below to collaborate, share ideas, or simply stay in touch.
         </p>
-        <!-- Social Icons (scaling up on sm breakpoint) -->
+
+        <!-- Social icons: revert to your original "size='28'" -->
         <div class="flex space-x-6 pt-2">
           <a
             *ngFor="let s of socials"
@@ -37,7 +35,8 @@
             href="{{ s.url }}"
             target="_blank"
           >
-            <ng-icon name="{{ s.icon }}" class="w-5 h-5 sm:w-7 sm:h-7"></ng-icon>
+            <!-- Original icon size: 28px -->
+            <ng-icon name="{{ s.icon }}" size="28"></ng-icon>
           </a>
         </div>
       </div>
@@ -79,7 +78,8 @@
     >
       <div class="flex items-center">
         <div class="flex space-x-2.5 items-center text-zinc-500">
-          <ng-icon name="heroEnvelope" class="w-5 h-5 sm:w-7 sm:h-7"></ng-icon>
+          <!-- Original icon size for Envelope -->
+          <ng-icon name="heroEnvelope" size="28"></ng-icon>
           <p class="text-zinc-900 dark:text-zinc-50 font-semibold text-md sm:text-lg">
             Stay up to date (coming soon)
           </p>
@@ -109,37 +109,11 @@
     >
       <div class="flex items-center">
         <div class="flex space-x-2.5 items-center text-zinc-500">
-          <ng-icon name="heroBriefcase" class="w-5 h-5 sm:w-7 sm:h-7"></ng-icon>
+          <!-- Original icon size for Briefcase -->
+          <ng-icon name="heroBriefcase" size="28"></ng-icon>
           <p class="text-zinc-900 dark:text-zinc-50 font-semibold text-md sm:text-lg">
             Work
           </p>
-        </div>
-      </div>
-
-      <div class="flex flex-col gap-y-4">
-        <div class="flex gap-x-2">
-          <a
-            class="p-1 size-14 border border-zinc-300/40 dark:border-zinc-700/40 bg-zinc-50 dark:bg-zinc-800 rounded-lg"
-          >
-            <img
-              ngSrc="assets/img/evplug_new.png"
-              alt="Rifak"
-              class="rounded-md saturate-50 hover:saturate-100"
-              width="679"
-              height="679"
-            />
-          </a>
-          <div class="flex flex-col justify-center flex-1">
-            <h5 class="font-normal text-md sm:text-lg">EVPLUG</h5>
-            <p class="text-zinc-400 text-sm sm:text-md">
-              Software Engineer
-            </p>
-          </div>
-          <div
-            class="flex text-end items-end text-zinc-600 text-sm font-medium"
-          >
-            <p>Sep 2024 - Apr 2025</p>
-          </div>
         </div>
       </div>
 
@@ -159,13 +133,13 @@
           <div class="flex flex-col justify-center flex-1">
             <h5 class="font-normal text-md sm:text-lg">Rifak</h5>
             <p class="text-zinc-400 text-sm sm:text-md">
-              Full stack Java developer (Freelancer)
+              Full stack Java developer
             </p>
           </div>
           <div
             class="flex text-end items-end text-zinc-600 text-sm font-medium"
           >
-            <p>Dec 2023 - May 2024</p>
+            <p>Jul 2023 - Mar 2024</p>
           </div>
         </div>
       </div>
